@@ -1,0 +1,2773 @@
+$cBase: #FF6B00
+
+@font-face
+	font-family: "Futura"
+	font-style: normal
+	font-weight: 300
+	src: local("Futura"), url('../fonts/FuturaLightC.woff2') format('woff2'), url('../fonts/FuturaLightC.woff') format('woff'), url('../fonts/FuturaLightC.ttf') format('ttf'), url('../fonts/FuturaLightC.eot') format('eot')
+
+@font-face
+	font-family: "Futura"
+	font-style: normal
+	font-weight: 400
+	src: local("Futura"), url('../fonts/FuturaBookC.woff2') format('woff2'), url('../fonts/FuturaBookC.woff') format('woff'), url('../fonts/FuturaBookC.ttf') format('ttf'), url('../fonts/FuturaBookC.eot') format('eot')
+
+@font-face
+	font-family: "Futura"
+	font-style: normal
+	font-weight: 500
+	src: local("Futura"), url('../fonts/FuturaMediumC.woff2') format('woff2'), url('../fonts/FuturaMediumC.woff') format('woff'), url('../fonts/FuturaMediumC.ttf') format('ttf'), url('../fonts/FuturaMediumC.eot') format('eot')
+
+@font-face
+	font-family: "Futura"
+	font-style: normal
+	font-weight: 600
+	src: local("Futura"), url('../fonts/FuturaDemiC.woff2') format('woff2'), url('../fonts/FuturaDemiC.woff') format('woff'), url('../fonts/FuturaDemiC.ttf') format('ttf'), url('../fonts/FuturaDemiC.eot') format('eot')
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+	-webkit-tap-highlight-color: transparent
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus
+	-webkit-text-fill-color: inherit!important
+	-webkit-box-shadow: 0 0 0px 1000px #fff inset
+
+a, a:before, a:after, a:hover, a:focus
+	text-decoration: none
+	color: inherit
+	+transition(all .3s)
+
+body
+	font-family: "Futura", Arial, sans-serif 
+	font-weight: 300
+	font-size: 12px 
+	line-height: 1.2
+	background: #1E1D1D
+	color: #fff
+
+.out
+	width: 100%
+	min-width: 320px
+	margin: 0 auto
+	overflow: hidden
+
+.container
+	max-width: 1280px
+	padding: 0 20px
+	margin: 0 auto
+
+.btn
+	border-radius: 32px
+	display: inline-block
+	text-align: center
+	padding: 14px 30px
+	font-size: 15px
+	font-weight: 600
+	position: relative
+	z-index: 1
+	white-space: nowrap
+	color: #fff	
+	background: transparent
+
+.btn-primary
+	z-index: 1
+	
+	&:before, &:after
+		content: ""
+		position: absolute		
+		border-radius: 32px
+		left: -1px
+		top: -1px
+		right: -1px
+		bottom: -1px
+		+transition(all 0.3s)
+
+	&:before
+		background: linear-gradient(to right, #FF6B00, #DC3720)
+		z-index: -1
+
+	&:after
+		background: linear-gradient(to left, #FF6B00, #DC3720)
+		z-index: -2
+
+	&:hover, &:focus, &:active
+
+		&:before
+			opacity: 0
+
+.btn-secondary
+	box-shadow: 0 0 0 1.25px rgba(255, 107, 0, 1)
+
+	&:before
+		content: ""
+		position: absolute
+		z-index: -1
+		border-radius: 32px
+		left: -1px
+		top: -1px
+		right: -1px
+		bottom: -1px
+		+transition(all 0.3s)
+		background: linear-gradient(to left, #FF6B00, #DC3720)
+		opacity: 0
+
+	&:hover, &:focus, &:active
+		color: #fff
+		box-shadow: 0 0 0 1px rgba(255, 107, 0, 0.1)
+
+		&:before
+			opacity: 1
+
+.form-group
+
+	& + .form-group
+		margin-top: 12px
+
+	button
+		margin-top: 4px
+
+.form-control
+	height: 48px
+	width: 100%
+	padding: 0 20px
+	+placeholder-color(#1E1D1D)
+	font-size: 15px
+	font-family: "Futura", Arial, sans-serif 
+	font-weight: 400
+	border-radius: 12px
+	background: #F2E7E7
+
+textarea.form-control
+	height: 120px
+	padding: 16px 20px
+	resize: none
+
+.title
+	margin-bottom: 50px
+
+	h1, h2
+		font-size: 56px
+		line-height: 1
+		font-weight: 500
+
+	h4
+		font-size: 42px
+		line-height: 1
+
+	h6
+		font-size: 24px
+		line-height: 1
+		font-weight: 500
+
+	p
+		font-size: 18px
+		font-weight: 400
+		line-height: 1.3
+		margin-top: 16px
+
+	b
+		font-weight: inherit
+		color: $cBase
+
+.title-controls
+	display: flex
+	align-items: baseline
+	justify-content: space-between
+
+	.owl-nav
+		margin-left: 20px
+		position: relative
+		top: 4px
+
+.owl-nav
+	display: flex
+	align-items: center
+	
+	.owl-prev, .owl-next
+		display: block
+		width: 24px
+		height: 24px
+		cursor: pointer
+		+transition(all 0.3s)
+
+	.owl-prev		
+		+icon("arrow-prev.svg")		
+
+		&:hover
+			+icon("arrow-prev-h.svg")
+
+	.owl-next
+		+icon("arrow-next.svg")
+		margin-left: 15px
+
+		&:hover
+			+icon("arrow-next-h.svg")
+	
+.content
+	font-size: 18px
+	font-weight: 400
+	line-height: 1.3
+
+	> * + *
+		margin-top: 20px
+
+.openmenu
+	overflow: hidden
+	height: 100%
+	position: fixed
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+
+	.header
+		background: linear-gradient(to bottom, #1E1D1D 70%, rgba(30,29,29,0) 100%)
+
+.mobmenu-toggle
+	display: none
+	position: relative
+	z-index: 11	
+	width: 28px
+	height: 24px
+	margin-left: 26px
+
+	span
+		position: absolute		
+		top: 50%
+		margin-top: -1px
+		display: block
+		height: 2px
+		width: 20px
+		background: $cBase
+		+transition(background 0s .3s)
+
+	span:before, span:after
+		content: ""
+		position: absolute
+		left: 0
+		right: 0
+		height: 2px		
+		background: $cBase
+		+transition-duration(0.3s, 0.3s, 0.3s)
+		+transition-delay(0.3s, 0s, 0s)
+
+	span:before
+		top: -8px
+		width: 28px
+		+transition-property(top, transform, background, width)
+
+	span:after
+		bottom: -8px
+		width: 12px
+		+transition-property(bottom, transform, background, width)
+
+.mobmenu-toggle.active
+
+	span
+		background: none!important
+
+	span:before
+		top: 0
+		+rotate(45)
+	 
+	span:after
+		bottom: 0
+		+rotate(-45)
+	 
+	span:before, span:after
+		width: 28px
+		+transition-delay(0s, 0.3s)
+
+.mobmenu
+	background: #1E1D1D
+	display: none
+	position: fixed
+	left: 0
+	top: 0
+	height: 100%	
+	width: 100%
+	overflow: hidden
+	text-align: center
+	z-index: 9
+	-webkit-transform: translateY(-120%)
+	-o-transform: translateY(-120%)
+	transform: translateY(-120%)	
+	+transition(0.6s)
+
+	.mobmenu__table
+		height: 100%
+		width: 100%		
+		overflow: auto
+		position: relative
+
+	.mobmenu__content
+		height: 100%
+		width: 100%
+		display: table
+
+	.container
+		padding: 90px 20px 40px
+		display: table-cell
+		vertical-align: middle
+
+	.mobmenu__nav
+		text-align: center
+		font-weight: 400
+		font-size: 18px
+
+		li + li
+			margin-top: 20px
+
+	.mobmenu__button
+		margin-top: 60px
+
+		.btn
+			min-width: 180px
+
+	.mobmenu__phones
+		margin: 78px 0 0
+
+	.mobmenu__socials
+		margin: 20px 0 0
+
+		ul
+			justify-content: center
+
+			li
+				margin: 0 10px!important
+
+.mobmenu.open
+	-webkit-transform: translateY(0)
+	-o-transform: translateY(0)
+	transform: translateY(0)
+
+.topline
+	background: #2B2A2A
+	padding: 15px 0
+
+	.container
+		display: flex
+		align-items: center
+		justify-content: flex-end
+
+	.topline__socials
+
+		li
+			margin: 0
+
+			& + li
+				margin-left: 20px
+
+.phones
+	font-size: 15px
+	margin-left: 60px
+
+	a
+		padding-left: 32px
+		position: relative
+		display: inline-block
+		white-space: nowrap
+
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			top: 50%
+			margin-top: -9px
+			width: 18px
+			height: 17px
+			+icon("phones.svg")
+
+		&:hover
+			color: $cBase
+
+.header
+	padding: 32px 0
+	position: relative
+	z-index: 10
+	+transition(background 0.3s)
+
+	.container
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	.header__logo
+		font-size: 0
+		width: 175px
+		margin-right: 20px
+
+		img
+			max-width: 100%
+
+	.header__nav
+		font-family: "Futura"
+		font-size: 15px
+		font-weight: 400
+		margin: 0 20px
+
+		ul
+			display: flex
+
+		li
+
+			& + li
+				margin-left: 48px
+		a
+
+			&:hover
+				color: $cBase
+
+	.header__button
+		margin-left: 20px
+		
+		.btn
+			width: 100%
+
+	.header__phone
+		display: none
+		margin-left: auto
+
+		a
+			position: relative
+			display: block
+			width: 24px
+			height: 24px
+			+icon("phones.svg")
+
+.offer
+	position: relative
+	margin-top: 70px
+	
+	.offer__wrapp
+		display: flex
+		align-items: center
+		min-height: 448px
+
+	.offer__content
+		padding-right: 60px
+		width: 50%
+
+		h1
+			font-size: 72px
+			font-weight: 600
+			line-height: 0.955
+
+		p
+			font-weight: 400
+			line-height: 1.3
+			margin-top: 24px
+			font-size: 18px
+			max-width: 485px
+
+	.offer__buttons
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		margin: 24px -8px -8px
+
+		.btn
+			min-width: 175px
+			margin: 8px
+
+	.offer__image
+		position: absolute
+		left: 50%
+		right: 0
+		font-size: 0
+		top: 0
+		bottom: 0
+		display: flex
+		align-items: center
+
+		img
+			max-height: 100%
+			border-radius: 100px 0px 0px 100px
+
+.categories
+	margin-top: 120px
+
+	.categories__filter
+		margin-bottom: 50px
+
+		ul
+			display: flex
+			flex-wrap: wrap
+			margin: -8px
+
+			li
+				margin: 8px
+
+		.btn
+			min-width: 175px
+
+	.categories__wrapp
+		display: flex
+		border-top: 1px solid #4A4747
+		padding-top: 10px
+
+	.categories__title
+		width: 50%
+		padding: 10px 40px 0 0
+
+	.categories__image
+		font-size: 0
+
+		img
+			max-width: 100%
+
+	.categories__content
+		width: 50%
+
+	.categories__button		
+		margin-top: 50px
+		text-align: center
+
+		.btn
+			min-width: 210px
+
+	.categories__panel
+		opacity: 0
+		+transition(all 0.3s)
+
+	.categories__panel.open
+		opacity: 1
+
+	.categories__list
+	
+		.category
+			position: relative
+			padding: 32px 0
+			border-bottom: 1px solid #4A4747
+
+			&.open
+
+				.category__name
+					
+					a
+						color: #fff
+
+						&:after
+							border-color: transparent
+
+						&:before
+							opacity: 1
+
+			&:nth-last-child(-n + 3)
+
+				.category__image
+					top: auto
+					bottom: 0
+
+		.category__name
+			color: #949191
+			font-size: 32px
+			font-weight: 300
+
+			a
+				display: block
+				position: relative
+				padding-right: 60px
+
+				&:hover
+					color: #fff
+
+					&:after
+						border-color: transparent
+						opacity: 1
+
+					&:before
+						opacity: 1
+
+				&:after, &:before
+					content: ""
+					position: absolute
+					right: 0
+					top: 50%
+					margin-top: -20px
+					width: 40px
+					height: 40px
+					border-radius: 50%
+
+				&:after
+					background: url(../img/icons/arrow-category.svg) left 16px center no-repeat
+					border: 1px solid #AEAEAE
+					opacity: 0.6
+
+				&:before
+					background: linear-gradient(to right, #FF6B00, #DC3720)
+					opacity: 0
+					border: 1px solid transparent
+
+		.category__image
+			font-size: 0
+			display: none
+			width: 100%
+			position: absolute
+			right: 100%
+			top: 0
+			text-align: right
+			padding: 0 30px 0 0
+
+			img
+				max-width: 100%
+				border-radius: 16px
+
+	.categories__tiles
+		display: flex
+		flex-wrap: wrap
+		margin: -23px -8px
+
+		.category
+			width: calc(25% - 16px)
+			margin: 23px 8px
+
+			.category__image
+				position: relative
+				display: block
+				overflow: hidden
+				border-radius: 16px
+
+				&:before
+					content: ""
+					display: block
+					padding-top: 100%
+
+				img
+					position: absolute
+					left: 0
+					top: 0
+					width: 100%
+					height: 100%
+					object-fit: cover
+
+			.category__name
+				text-align: center
+				font-size: 18px
+				font-weight: 400
+				margin-top: 25px
+				display: block
+				+transition(all 0.3s)
+
+			&:hover
+
+				.category__name
+					color: $cBase
+
+.about
+	margin-top: 120px
+
+	.about__wrapp
+		display: flex
+		align-items: center
+
+		&:nth-child(even)
+
+			.about__content
+				order: 2
+				padding: 0 0 0 30px
+
+			.about__image
+				order: 1
+				padding: 0 30px 0 0
+
+		& + .about__wrapp
+			margin-top: 120px
+
+	.about__content
+		padding-right: 30px
+		width: 50%
+
+	.about__image
+		padding-left: 30px
+		width: 50%
+		font-size: 0
+
+		img
+			width: 100%
+			border-radius: 24px
+
+	.about__button
+		margin-top: 30px
+
+.stages
+	margin-top: 80px
+
+	.title
+		text-align: center
+
+	.stages__list
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		margin: -9px
+
+	.stages__button
+		margin-top: 40px
+		text-align: center
+
+		.btn
+			min-width: 175px
+
+.stage
+	width: calc(20% - 18px)
+	margin: 9px
+	border-radius: 16px
+	background: #2D2C2C
+	padding: 25px 16px
+
+	.stage__num
+		font-size: 46px
+		font-weight: 600
+		line-height: 1
+		color: #2D2C2C
+		text-shadow: 1px 0 #4E4E4E, 0 -1px #4E4E4E, -1px 0 #4E4E4E, 0 1px #4E4E4E
+		letter-spacing: 2px
+
+	.stage__name
+		margin-top: 20px
+		font-size: 18px
+		font-weight: 600
+
+	.stage__descr
+		margin-top: 15px
+		color: #B0B0B0
+		font-size: 13px
+		font-weight: 400
+		line-height: 1.5
+
+.consultation
+	margin-top: 80px	
+
+	.consultation__wrapp
+		border-radius: 24px
+		background: #FFF
+		padding: 35px 60px
+		display: flex
+		align-items: center
+		position: relative
+		z-index: 1
+
+	.title
+		
+		h2
+			color: $cBase
+
+		p
+			color: #1E1D1D
+
+	.consultation__form
+		width: 50%
+		padding-right: 20px
+
+		form
+			max-width: 360px
+
+		.btn
+			width: 100%
+			
+	.consultation__image
+		font-size: 0
+		padding-left: 20px
+		text-align: center
+		width: 50%
+
+		img
+			max-width: 100%
+
+.faqs
+	margin-top: 120px
+
+	.title
+		text-align: center
+
+	.faqs__list
+		max-width: 880px
+		margin: 0 auto
+
+	.faqs__button
+		margin-top: 40px
+		text-align: center
+
+		.btn
+			min-width: 250px
+
+.faq
+	border-bottom: 1px solid #4A4747
+	padding-top: 32px	
+
+	.faq__question
+		font-size: 22px
+		padding: 0 60px 0 0
+		position: relative
+		cursor: pointer	
+		+transition(all 0.3s)
+		margin-bottom: 32px
+		font-weight: 400
+
+		&:after
+			content: ""
+			position: absolute
+			width: 18px
+			height: 10px
+			top: 10px
+			right: 0
+			+icon("arrow-faq.svg")
+			+transition(all 0.3s)
+
+		&:hover
+			color: $cBase
+
+	.faq__answer
+		display: none
+		font-size: 18px
+		line-height: 1.3
+		padding: 0 0 32px 0
+
+		p
+
+			& + p
+				margin-top: 15px
+
+	&.open
+
+		.faq__question
+			color: $cBase
+
+			&:after
+				+rotate(180)
+
+.reviews
+	margin-top: 120px
+
+	.reviews__carousel
+
+		.owl-stage
+			display: flex
+
+		.owl-wrapper
+			display: flex !important
+
+		.review
+
+			a
+				width: 100%
+
+	.reviews__tiles
+		display: flex
+		flex-wrap: wrap
+		margin: -8px
+
+		.review
+			width: calc(25% - 16px)
+			margin: 8px
+
+	.reviews__button
+		margin-top: 40px
+		text-align: center
+
+		.btn
+			min-width: 250px
+
+.review
+	border-radius: 16px
+	background: #2D2C2C
+	text-align: center
+	height: 100%
+
+	img
+		border-radius: 12px
+		max-width: 100%
+
+	span
+		font-size: 18px
+		font-weight: 400
+		line-height: 1.3
+		margin-top: auto
+		padding-top: 25px
+		display: block
+
+	a
+		padding: 40px
+		display: flex
+		flex-direction: column
+
+		&:hover
+			color: $cBase
+
+.footer
+	background: #2B2A2A
+	margin-top: 120px
+	position: relative
+	z-index: 1
+
+	.btn-secondary
+		background: #2B2A2A
+
+	.footer__top
+		padding: 45px 0
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	.footer__logo
+		font-size: 0
+		width: 175px
+		margin-right: 20px
+
+		img
+			max-width: 100%
+
+	.footer__nav
+		font-family: "Futura"
+		font-size: 15px
+		font-weight: 400
+		margin: 0 20px
+
+		ul
+			display: flex
+
+		li
+
+			& + li
+				margin-left: 48px
+		a
+
+			&:hover
+				color: $cBase
+
+	.footer__button
+		margin-left: 20px
+		
+		.btn
+			width: 100%
+
+	.footer__bottom
+		border-top: 1px solid #4A4747
+		padding: 45px 0
+		display: flex
+		justify-content: space-between
+
+		.footer__button
+			display: none
+
+	.footer__copy
+		font-size: 15px
+		font-weight: 400
+		order: -1
+
+	.footer__phones
+		margin: 0
+		text-align: right
+
+	.footer__socials
+		margin: 20px 0 0
+
+		ul
+			justify-content: flex-end
+			margin: 0
+
+			li
+				margin: 0
+
+				& + li
+					margin-left: 20px
+
+.fancybox-bg
+	background: #000
+
+.fancybox-is-open
+
+	.fancybox-bg
+		opacity: 0.6
+
+.modal
+	padding: 40px 40px 48px
+	border-radius: 10px
+	background: #1E1D1D
+	width: 100%
+	max-width: 420px
+
+	.modal__header
+		margin-bottom: 30px
+
+	.modal__info
+		font-size: 17px
+		font-weight: 300
+		line-height: 1.4
+
+	form
+
+		.btn
+			width: 100%
+
+.breadcrumbs
+	color: #888
+	font-size: 12px
+	font-weight: 400
+	margin-top: 30px
+	
+	ul
+		display: flex
+		flex-wrap: wrap		
+
+		li
+
+			&:not(:last-child)
+				margin-right: 10px
+				padding-right: 13px
+				position: relative
+
+				&:after
+					content: ">"
+					position: absolute
+					right: 0
+
+	a
+		color: #fff
+
+		&:hover
+			color: $cBase
+
+	& + div
+		margin-top: 70px
+
+.video
+	margin-top: 120px
+	
+	.video__player
+		border-radius: 24px
+		overflow: hidden
+
+		a
+			display: block
+			position: relative
+
+			&:before
+				content: ""
+				position: absolute
+				left: 50%
+				top: 50%
+				width: 66px
+				height: 66px
+				border-radius: 50%
+				+icon("play.svg")
+				margin: -33px 0 0 -33px
+				box-shadow: 0 0 10px rgba(0,0,0,0.25)
+
+			&:hover
+
+				&:before
+					+icon("play-h.svg")
+
+		img
+			width: 100%
+
+.products-carousel
+	margin-top: 120px
+
+	.owl-stage
+		display: flex
+
+		.product
+			height: 100%
+
+.products
+
+	.products__tiles
+		margin: -18px -8px
+		display: flex
+		flex-wrap: wrap
+
+		.product
+			width: calc(25% - 16px)
+			margin: 18px 8px
+
+	.products__more
+		text-align: center
+		margin-top: 60px
+
+		.btn
+			min-width: 175px
+
+.product
+	display: flex
+	flex-direction: column
+
+	.product__image
+		
+		a
+			position: relative
+			display: block
+
+			&:before
+				content: ""
+				display: block
+				padding-top: 66%
+
+			img
+				position: absolute
+				left: 0
+				top: 0
+				width: 100%
+				height: 100%
+				object-fit: cover
+				border-radius: 16px
+
+	.product__name
+		margin-top: 25px
+		margin-bottom: 16px
+
+		a
+			font-size: 18px
+			font-weight: 400
+			line-height: 1.3
+
+			&:hover
+				color: $cBase
+
+	.product__price
+		font-size: 18px
+		font-weight: 400
+		line-height: 1.3		
+		margin-top: auto
+
+		span
+			color: $cBase
+
+	.product__city
+		font-size: 18px
+		font-weight: 400
+		line-height: 1.3		
+		margin-top: auto
+		padding-left: 30px
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			top: 0px
+			width: 18px
+			height: 21px
+			+icon("pointer.svg")
+
+	.product__button
+		margin-top: 16px
+		padding: 1px
+
+		.btn
+			min-width: 175px
+
+.productdetail
+
+	.productdetail__wrapp
+		display: flex
+
+	.productdetail__images
+		width: 54%
+
+	.productdetail__slideshow
+		border-radius: 24px
+		overflow: hidden
+
+	.productdetail__thumbs
+		margin-top: 20px
+		padding: 0 50px
+
+		.owl-prev, .owl-next
+			position: absolute
+			top: 50%
+			margin-top: -12px
+
+		.owl-prev
+			left: 0
+
+		.owl-next
+			right: 0
+
+	.productdetail__thumb
+		border-radius: 12px
+		overflow: hidden
+
+	.productdetail__content
+		width: 46%
+		padding-left: 70px
+
+	.productdetail__name
+
+		h1
+			font-size: 32px
+			font-weight: 500			
+
+	.productdetail__art
+		margin-top: 32px
+		color: #9B9B9B
+		font-size: 15px
+		font-weight: 400
+
+	.productdetail__price
+		font-size: 18px
+		font-weight: 400
+		line-height: 1.3
+		margin-top: 32px
+
+		span
+			color: $cBase
+
+	.productdetail__info
+		font-size: 15px
+		margin-top: 35px
+		line-height: 1.3
+
+		> * + *
+			margin-top: 16px
+
+		ul
+			margin-top: 30px
+
+			& + *
+				margin-top: 30px
+
+			li
+				padding-left: 18px
+				position: relative
+
+				&:before
+					content: ""
+					position: absolute
+					left: 0
+					top: 7px
+					width: 6px
+					height: 6px
+					border-radius: 50%
+					background: linear-gradient(to right, #FF6B00, #DC3720)
+
+				& + li
+					margin-top: 12px
+
+	.productdetail__buttons
+		margin: 22px -8px -8px
+		display: flex
+		flex-wrap: wrap
+
+		.btn
+			margin: 8px
+			min-width: 210px
+
+.socials
+
+	ul
+		display: flex
+		align-items: center
+		margin: -5px
+
+		li
+			margin: 5px
+
+	a
+		opacity: 0.9
+
+		&:hover
+			opacity: 1
+
+	img
+		max-width: 32px
+		max-height: 32px
+
+.contacts
+
+	.contacts__wrapp
+		display: flex
+		align-items: center
+
+	.contacts__content
+		width: 32%
+		padding-right: 40px
+
+	.contacts__map
+		width: 68%
+		height: 360px
+		border-radius: 22px
+		overflow: hidden
+
+		.ymaps-2-1-79-ground-pane
+			-webkit-filter: invert(80%) grayscale(100%)
+			-moz-filter: invert(80%) grayscale(100%)
+			-o-filter: invert(80%) grayscale(100%)
+			filter: invert(80%) grayscale(100%)
+
+		.ymaps-2-1-79-map-copyrights-promo
+			display: none
+
+	.contacts__list
+		font-size: 15px
+		font-weight: 600
+
+		p
+			padding-left: 35px
+			position: relative
+
+			&:before
+				content: ""
+				position: absolute
+				left: 0
+				top: -3px
+				width: 22px
+				height: 22px
+
+			& + p
+				margin-top: 30px
+
+		.address
+
+			&:before
+				background: url(../img/icons/address.svg) center no-repeat
+
+		.email
+
+			&:before
+				background: url(../img/icons/email.svg) center no-repeat
+
+		.phone
+
+			&:before
+				background: url(../img/icons/phone.svg) center no-repeat
+
+			span
+				display: block
+				color: #848484
+				font-size: 14px
+				font-weight: 500
+				margin-top: 8px
+
+		a
+
+			&:hover
+				color: $cBase
+
+	.contacts__socials
+		margin-top: 40px
+		padding-left: 35px
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
++max-screen(1279)
+	
+	.btn
+		font-size: 14px
+
+	.title
+		margin-bottom: 45px
+
+		h1, h2
+			font-size: 50px
+
+		h4
+			font-size: 38px
+
+		h6
+			font-size: 23px
+
+	.title-controls
+
+		.owl-nav
+			top: 3px
+
+	.container
+		max-width: 992px
+
+	.header
+		padding: 30px 0
+
+		.header__logo
+			width: 160px
+
+		.header__nav
+			font-size: 14px
+
+			li
+
+				& + li
+					margin-left: 40px
+
+	.offer
+		margin-top: 50px
+		
+		.offer__wrapp
+			min-height: 380px
+
+		.offer__content
+			padding-right: 50px
+
+			h1
+				font-size: 58px
+
+			p
+				font-size: 17px
+				max-width: 450px
+
+		.offer__buttons
+
+			.btn
+				min-width: 160px
+
+		.offer__image
+
+			img
+				border-radius: 80px 0px 0px 80px
+
+	.categories
+
+		.categories__filter
+			margin-bottom: 45px
+
+			.btn
+				min-width: 160px
+
+		.categories__button		
+			margin-top: 45px
+
+			.btn
+				min-width: 200px
+
+		.categories__list
+		
+			.category
+				padding: 30px 0
+
+			.category__name
+				font-size: 29px
+
+				a
+					padding-right: 50px
+
+					&:after
+						margin-top: -18px
+						width: 36px
+						height: 36px
+						background-position: left 15px center
+						background-size: 8px
+
+					&:before
+						margin-top: -18px
+						width: 36px
+						height: 36px
+
+			.category__image
+
+				img
+					border-radius: 14px
+
+		.categories__tiles
+			margin: -20px -8px
+
+			.category
+				margin: 20px 8px
+
+				.category__image
+					border-radius: 14px
+
+				.category__name
+					font-size: 17px
+					margin-top: 20px
+
+	.about		
+
+		.about__content
+			padding-right: 25px
+
+		.about__image
+			padding-left: 25px
+
+			img
+				border-radius: 20px
+
+		.about__wrapp
+
+			&:nth-child(even)
+
+				.about__content
+					padding: 0 0 0 25px
+
+				.about__image
+					padding: 0 25px 0 0
+
+			& + .about__wrapp
+				margin-top: 100px
+
+	.stages
+
+		.stages__button
+
+			.btn
+				min-width: 160px
+
+	.stage
+		width: calc(33.33333333% - 18px)
+
+		.stage__num
+			font-size: 42px
+
+		.stage__name
+			font-size: 16px
+
+	.consultation
+
+		.consultation__wrapp
+			border-radius: 20px
+			padding: 30px 50px
+
+		.consultation__form
+
+			form
+				max-width: 320px
+
+	.faqs		
+
+		.faqs__list
+			max-width: 840px
+
+		.faqs__button
+
+			.btn
+				min-width: 220px
+
+	.faq
+		padding-top: 30px
+
+		.faq__question
+			font-size: 20px
+			margin-bottom: 30px
+
+			&:after
+				width: 16px
+				height: 9px
+				top: 9px
+
+		.faq__answer
+			font-size: 17px
+			padding: 0 0 30px 0
+
+	.reviews		
+
+		.reviews__tiles
+
+			.review
+				width: calc(33.333333333% - 16px)
+
+		.reviews__button
+
+			.btn
+				min-width: 220px
+
+	.review	
+
+		span
+			font-size: 16px
+
+		a
+			padding: 35px
+
+	.footer
+
+		.footer__logo
+			width: 160px
+
+		.footer__nav
+			font-size: 14px
+
+			li
+
+				& + li
+					margin-left: 40px
+
+		.footer__copy
+			font-size: 14px
+
+	.breadcrumbs
+		margin-top: 25px
+		
+		& + div
+			margin-top: 65px
+
+	.video		
+		
+		.video__player
+			border-radius: 20px
+
+			a
+
+				&:before
+					width: 60px
+					height: 60px
+					margin: -30px 0 0 -30px
+
+	.products
+
+		.products__more
+			margin-top: 55px
+
+			.btn
+				min-width: 160px
+
+	.product
+
+		.product__image
+			
+			a
+
+				img
+					border-radius: 14px
+
+		.product__name
+			margin-top: 20px
+
+			a
+				font-size: 17px
+
+		.product__price
+			font-size: 17px
+
+		.product__city
+			font-size: 17px
+			padding-left: 28px
+
+			&:before
+				width: 16px
+				height: 19px
+
+		.product__button
+
+			.btn
+				min-width: 160px
+
+	.productdetail
+
+		.productdetail__images
+			width: 52%
+
+		.productdetail__slideshow
+			border-radius: 20px
+
+		.productdetail__thumbs
+			padding: 0 40px
+
+		.productdetail__content
+			padding-left: 50px
+			width: 48%
+
+		.productdetail__name
+
+			h1
+				font-size: 28px
+
+		.productdetail__art
+			margin-top: 30px
+
+		.productdetail__price
+			font-size: 17px
+			margin-top: 30px
+
+		.productdetail__info
+			margin-top: 30px
+
+			ul
+				margin-top: 25px
+
+				& + *
+					margin-top: 25px
+
+				li
+
+					& + li
+						margin-top: 10px
+
+		.productdetail__buttons
+			margin: 20px -8px -8px
+
+			.btn
+				min-width: 170px
+
+	.contacts
+
+		.contacts__content
+			width: 36%
+			padding-right: 30px
+
+		.contacts__map
+			width: 64%
+			height: 340px
+			border-radius: 20px
+
+		.contacts__list
+
+			p
+
+				& + p
+					margin-top: 25px
+
+		.contacts__socials
+			margin-top: 35px
+
++max-screen(991)
+
+	.btn
+		padding: 12px 25px
+
+	.content
+		font-size: 17px
+
+	.title
+		margin-bottom: 40px
+
+		h1, h2
+			font-size: 44px
+
+		h4
+			font-size: 34px
+
+		h6
+			font-size: 22px
+	
+	.container
+		max-width: 768px
+
+	.header
+		padding: 28px 0
+
+		.header__logo
+			width: 120px
+
+		.header__nav
+
+			li
+
+				& + li
+					margin-left: 25px
+
+	.offer
+		margin-top: 30px
+		
+		.offer__wrapp
+			min-height: 310px
+
+		.offer__content
+			padding-right: 40px
+
+			h1
+				font-size: 40px
+
+			p
+				font-size: 15px
+				max-width: 420px
+
+		.offer__buttons
+
+			.btn
+				min-width: 150px
+
+		.offer__image
+
+			img
+				border-radius: 80px 0px 0px 80px
+
+	.categories
+		margin-top: 120px
+
+		.categories__filter
+			margin-bottom: 40px
+
+			.btn
+				min-width: 145px
+
+		.categories__button		
+			margin-top: 40px
+
+			.btn
+				min-width: 180px
+
+		.categories__list
+		
+			.category
+				padding: 28px 0
+
+			.category__name
+				font-size: 26px
+
+				a
+
+					&:after, &:before
+						margin-top: -16px
+						width: 32px
+						height: 32px
+						background-position: left 14px center
+						background-size: 6px
+
+			.category__image
+
+				img
+					border-radius: 12px
+
+		.categories__tiles
+			margin: -18px -8px
+
+			.category
+				margin: 18px 8px
+
+				.category__image
+					border-radius: 12px
+
+				.category__name
+					font-size: 16px
+
+	.about
+		margin-top: 120px
+
+		.about__content
+			padding-right: 20px
+
+		.about__image
+			padding-left: 20px
+
+			img
+				border-radius: 16px
+
+		.about__wrapp
+
+			&:nth-child(even)
+
+				.about__content
+					padding: 0 0 0 20px
+
+				.about__image
+					padding: 0 20px 0 0
+
+			& + .about__wrapp
+				margin-top: 80px
+
+	.stage
+		width: calc(50% - 18px)
+
+		.stage__num
+			font-size: 38px
+
+	.consultation
+
+		.consultation__wrapp
+			padding: 30px 40px
+
+		.consultation__form
+
+			form
+				max-width: 280px
+
+	.faqs
+		margin-top: 120px
+
+		.faqs__list
+			max-width: 800px
+
+		.faqs__button
+
+			.btn
+				min-width: 180px
+
+	.faq
+		padding-top: 26px
+
+		.faq__question
+			font-size: 18px
+			margin-bottom: 26px
+
+			&:after
+				width: 14px
+				height: 8px
+				top: 8px
+
+		.faq__answer
+			font-size: 16px
+			padding: 0 0 26px 0
+
+	.reviews
+		margin-top: 120px
+
+		.reviews__tiles
+
+			.review
+				width: calc(50% - 16px)
+
+		.reviews__button
+
+			.btn
+				min-width: 180px
+
+	.review	
+
+		a
+			padding: 30px
+
+	.footer
+		margin-top: 120px
+
+		.footer__logo
+			width: 120px
+
+		.footer__nav
+
+			li
+
+				& + li
+					margin-left: 25px
+
+	.breadcrumbs
+		margin-top: 20px
+		
+		& + div
+			margin-top: 60px
+
+	.video		
+		
+		.video__player
+			border-radius: 16px
+
+			a
+
+				&:before
+					width: 54px
+					height: 54px
+					margin: -27px 0 0 -27px	
+
+	.products
+
+		.products__more
+			margin-top: 50px
+
+			.btn
+				min-width: 145px
+
+		.products__tiles
+
+			.product
+				width: calc(33.33333333% - 16px)
+
+	.product		
+
+		.product__image
+			
+			a
+
+				img
+					border-radius: 12px
+
+		.product__name
+
+			a
+				font-size: 16px
+
+		.product__price
+			font-size: 16px
+
+		.product__city
+			font-size: 16px
+			padding-left: 24px
+
+			&:before
+				width: 14px
+				height: 17px
+
+		.product__button
+
+			.btn
+				min-width: 145px
+
+	.productdetail
+
+		.productdetail__slideshow
+			border-radius: 16px
+
+		.productdetail__content
+			padding-left: 30px
+
+		.productdetail__name
+
+			h1
+				font-size: 24px				
+
+		.productdetail__art
+			margin-top: 25px
+
+		.productdetail__price
+			font-size: 16px
+			margin-top: 25px
+
+		.productdetail__info
+			margin-top: 25px
+
+			ul
+				margin-top: 20px
+
+				& + *
+					margin-top: 20px
+
+		.productdetail__buttons
+
+			.btn
+				min-width: 230px
+
+	.contacts
+
+		.contacts__content
+			width: 40%
+
+		.contacts__map
+			width: 60%
+			height: 320px
+			border-radius: 18px
+
+		.contacts__list
+
+			p
+
+				& + p
+					margin-top: 20px
+
+		.contacts__socials
+			margin-top: 35px
+			padding-left: 35px
+
++max-screen(767)
+
+	.mobmenu-toggle, .mobmenu
+		display: block
+
+	.container
+		max-width: 575px
+
+	.title
+		margin-bottom: 35px
+
+		h1, h2
+			font-size: 38px
+
+		h4
+			font-size: 30px
+
+		h6
+			font-size: 21px
+
+		p
+			font-size: 16px
+
+	.title-controls
+
+		.owl-nav
+			top: 3px
+
+	.btn
+		font-size: 15px
+
+	.form-control
+		height: 42px
+		font-size: 14px
+
+	textarea.form-control
+		padding: 15px 20px
+
+	.topline
+		display: none
+
+	.header
+		padding: 26px 0
+
+		.header__logo
+			width: 140px
+		
+		.header__nav
+			display: none
+
+		.header__button
+			display: none
+
+		.header__phone
+			display: block
+
+	.offer
+		margin-top: 50px
+		
+		.offer__wrapp
+			display: block
+			min-height: 0
+
+		.offer__content
+			padding-right: 0
+			width: 100%
+
+			p
+				max-width: 100%
+				font-size: 16px
+
+		.offer__image
+			position: static
+			display: block
+			padding-left: calc((100% - 535px) / 2)
+			margin-top: 60px
+
+			img
+				max-height: none
+				max-width: none
+				width: 100%
+
+	.categories
+		margin-top: 100px
+
+		.categories__filter
+			margin-bottom: 35px
+
+			.btn
+				min-width: 0px
+
+		.categories__wrapp
+			display: block
+
+		.categories__title
+			width: 100%
+			padding: 10px 0 0
+
+		.categories__image
+			display: none
+
+		.categories__content
+			width: 100%
+
+		.categories__button		
+			margin-top: 35px
+
+			.btn
+				min-width: 160px
+
+		.categories__list
+		
+			.category
+				padding: 26px 0
+
+			.category__name
+				font-size: 23px
+
+				a
+
+					&:after, &:before
+						margin-top: -14px
+						width: 28px
+						height: 28px
+						background-position: left 12px center
+
+			.category__image
+				display: none!important
+
+		.categories__tiles
+			margin: -16px -8px
+
+			.category
+				margin: 16px 8px
+				width: calc(33.33333333% - 16px)
+
+	.about
+		margin-top: 100px
+
+		.about__wrapp
+			display: block
+
+			&:nth-child(even)
+
+				.about__content
+					padding: 0
+
+				.about__image
+					padding: 60px 0 0
+
+			& + .about__wrapp
+				margin-top: 60px
+
+		.about__content
+			padding-right: 0
+			width: 100%
+
+		.about__image
+			width: 100%
+			padding: 60px 0 0
+
+	.consultation
+
+		.consultation__wrapp
+			padding: 30px
+			display: block
+
+		.consultation__form
+			width: 100%
+			padding: 0
+
+			form
+				max-width: 100%
+
+		.consultation__image
+			padding: 50px 0 0
+			width: 100%
+
+	.faqs
+		margin-top: 100px
+
+	.faq
+		padding-top: 22px
+
+		.faq__question
+			margin-bottom: 22px
+			padding-right: 40px
+
+			&:after
+				width: 12px
+				height: 7px
+				top: 9px
+
+		.faq__answer
+			padding: 0 0 22px 0
+
+	.products-carousel
+		margin-top: 100px
+
+	.reviews
+		margin-top: 100px
+
+	.review	
+
+		a
+			padding: 25px
+
+	.footer
+		margin-top: 100px
+
+		.footer__top
+			display: block
+			text-align: center
+
+		.footer__logo
+			width: 100%
+			margin: 0
+
+			img
+				max-width: 140px
+
+		.footer__nav
+			margin: 30px 0
+
+			ul
+				justify-content: center
+
+			li
+
+				& + li
+					margin-left: 25px
+
+		.footer__button
+			margin: 0
+
+			.btn
+				min-width: 160px
+				width: auto
+
+	.modal
+		padding: 35px 35px 42px
+
+		.modal__header
+			margin-bottom: 25px
+
+		.modal__info
+			font-size: 16px
+
+	.breadcrumbs
+		margin-top: 15px
+		
+		& + div
+			margin-top: 55px
+
+	.video
+		margin-top: 100px
+		
+		.video__player
+			border-radius: 16px
+
+			a
+
+				&:before
+					width: 48px
+					height: 48px
+					margin: -24px 0 0 -24px	
+
+				img
+					min-height: 340px
+					object-fit: cover
+
+	.products
+
+		.products__more
+			margin-top: 45px
+
+		.products__tiles
+
+			.product
+				width: calc(50% - 16px)
+
+	.productdetail
+
+		.productdetail__wrapp
+			display: block
+
+		.productdetail__images
+			width: 100%
+			padding: 0
+
+		.productdetail__slideshow
+			border-radius: 12px
+
+		.productdetail__content
+			padding: 50px 0 0
+			width: 100%
+
+		.productdetail__name
+
+			h1
+				font-size: 20px				
+
+		.productdetail__art
+			margin-top: 20px
+
+		.productdetail__price
+			margin-top: 20px
+
+		.productdetail__info
+			margin-top: 20px
+
+			ul
+				margin-top: 15px
+
+				& + *
+					margin-top: 15px
+
+		.productdetail__buttons
+
+			.btn
+				min-width: 200px
+
+	.contacts
+
+		.contacts__wrapp
+			display: block
+
+		.contacts__content
+			width: 100%
+			padding: 0 0 40px
+
+		.contacts__map
+			width: 100%
+			height: 380px
+			border-radius: 16px
+
+		.contacts__socials
+			margin-top: 30px
+
++max-screen(574)
+
+	.container
+		max-width: 425px
+
+	.content
+		font-size: 16px
+
+	.title
+		margin-bottom: 30px
+
+		h1, h2
+			font-size: 32px
+
+		h4
+			font-size: 26px
+
+		h6
+			font-size: 20px
+
+	.header
+		padding: 24px 0
+		
+	.offer
+
+		.offer__content
+
+			h1
+				font-size: 30px
+
+		.offer__buttons
+
+			.btn
+				width: calc(50% - 16px)
+		
+		.offer__image
+			padding-left: calc((100% - 385px) / 2)
+
+			img
+				border-radius: 50px 0px 0px 50px
+
+	.categories
+		margin-top: 80px
+
+		.categories__filter
+			margin-bottom: 30px
+
+			ul
+				margin: -8px
+
+				li
+					width: calc(50% - 16px)
+
+			.btn
+				width: 100%
+
+		.categories__wrapp
+			
+			.title
+				margin-bottom: 10px
+
+		.categories__list			
+
+			.category
+				padding: 24px 0
+
+			.category__name
+				font-size: 20px
+
+				a
+
+					&:after, &:before
+						margin-top: -12px
+						width: 24px
+						height: 24px
+						background-position: left 10px center
+
+		.categories__tiles
+
+			.category
+				width: calc(50% - 16px)
+
+				.category__name
+					margin-top: 15px
+
+	.about
+		margin-top: 80px
+
+		.about__wrapp
+
+			.about__image
+				padding: 40px 0 0
+
+			&:nth-child(even)
+
+				.about__image
+					padding: 40px 0 0
+
+			& + .about__wrapp
+				margin-top: 40px
+
+	.stages
+		
+		.stages__list
+			display: block
+			margin: 0
+
+	.stage
+		width: 100%
+		margin: 0
+
+		& + .stage
+			margin-top: 18px
+
+		.stage__descr
+			font-size: 14px
+
+	.consultation
+
+		.consultation__wrapp
+			padding: 30px 20px
+
+	.faq
+		padding-top: 18px
+
+		.faq__question
+			margin-bottom: 18px
+			padding-right: 30px
+			font-size: 16px
+
+			&:after
+				width: 10px
+				height: 6px
+
+		.faq__answer
+			padding: 0 0 18px 0
+
+	.products-carousel
+		margin-top: 80px
+
+	.reviews
+		margin-top: 80px
+
+	.review
+		border-radius: 12px
+
+		img
+			border-radius: 8px
+
+		a
+			padding: 20px
+
+		span
+			padding-top: 20px
+
+	.footer
+		margin-top: 80px
+
+		.footer__top
+
+			.footer__button
+				display: none
+
+		.footer__nav
+			margin-bottom: 0
+
+			ul
+				display: block
+
+			li
+
+				& + li
+					margin: 15px 0 0
+
+		.footer__bottom
+			display: block
+			text-align: center
+			margin: 0
+			padding: 0 0 45px
+			border: 0
+
+			.footer__button
+				display: block
+				margin-top: 40px
+
+		.footer__phones
+			text-align: center
+
+		.footer__socials
+
+			ul
+				justify-content: center
+
+		.footer__copy
+			margin-top: 40px
+
+	.modal
+		padding: 35px 30px 42px
+
+	.breadcrumbs
+		margin-top: 10px
+		
+		& + div
+			margin-top: 50px
+
+	.video
+		margin-top: 80px
+		
+		.video__player
+			border-radius: 12px
+
+			a
+
+				&:before
+					width: 42px
+					height: 42px
+					margin: -21px 0 0 -21px	
+
+				img
+					min-height: 280px
+
+	.products
+
+		.products__more
+			margin-top: 40px
+
+	.product
+
+		.product__name
+			margin-top: 15px
+
+		.product__button
+
+			.btn
+				min-width: 0
+				width: 100%
+
+	.productdetail
+
+		.productdetail__buttons
+			display: block
+			text-align: center
+			margin: 25px 0 0
+
+			.btn
+				min-width: 240px
+				width: auto
+				max-width: 100%
+				margin: 0
+
+				& + .btn
+					margin: 16px 0 0
+
++max-screen(424)
+	
+	.container
+		padding: 0 16px
+	
+	.title
+
+		h1, h2
+			font-size: 24px
+
+		h4
+			font-size: 20px
+
+	.title-controls
+
+		.owl-nav
+			top: 4px
+
+	.offer
+		
+		.offer__image
+			padding-left: 20px
+
+	.categories
+		margin-top: 60px
+
+		.categories__list
+
+			.category
+				padding: 22px 0
+
+			.category__name
+				font-size: 18px
+
+				a
+
+					&:after, &:before
+						margin-top: -10px
+						width: 20px
+						height: 20px
+						background-position: left 8px center
+						background-size: 5px
+
+	.about
+		margin-top: 60px
+
+	.stages
+		margin-top: 60px
+
+	.consultation
+		margin-top: 60px
+
+	.products-carousel
+		margin-top: 60px
+
+	.reviews
+		margin-top: 60px
+	
+	.modal
+		padding: 35px 20px 42px
+
+	.breadcrumbs
+		margin-top: 5px
+
+		& + div
+			margin-top: 45px
+
+	.video
+		margin-top: 60px
+		
+		.video__player
+
+			a
+
+				&:before
+					width: 36px
+					height: 36px
+					margin: -18px 0 0 -18px	
+
+				img
+					min-height: 250px
+		
++max-screen(359)
+	
+	.offer
+
+		.offer__content
+
+			h1
+				font-size: 32px
+
+		.offer__buttons
+			justify-content: center
+
+			.btn
+				min-width: 180px
+
+	.reviews
+
+		.reviews__tiles
+			display: block
+			margin: 0
+
+			.review
+				width: 100%
+				margin: 0
+
+				& + .review
+					margin-top: 16px
+
+	.video
+		
+		.video__player
+
+			a
+
+				img
+					min-height: 210px
+
++min-screen(768)
+	
+	.openmenu
+		overflow: auto!important
+		height: auto!important
+		position: static!important
